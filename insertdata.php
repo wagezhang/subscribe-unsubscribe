@@ -12,12 +12,12 @@ $host = 'localhost';
 $user = 'root';
 $pass = ' ';
 
-mysql_connect($host, $user, $pass);
+//mysql_connect($host, $user, $pass);
 
-mysql_select_db('demo');
+//mysql_select_db('demo');
 
-$insertdata=" INSERT INTO user_info VALUES( '$name','$age','$course' ) ";
-mysql_query($insertdata);
+//$insertdata=" INSERT INTO user_info VALUES( '$name','$age','$course' ) ";
+//mysql_query($insertdata);
 
 }
 ?>
