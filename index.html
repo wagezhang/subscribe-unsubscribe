@@ -5,11 +5,11 @@
 	<link rel="stylesheet" href="style.css"/>
 	<script>
 		function getGreeting(){
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET","/greeting",false);
-			xhr.send();
-			console.log(xhr.responseText);
-			document.getElementById("target").innerHTML=xhr.responseText;
+			//var xhr = new XMLHttpRequest();
+			//xhr.open("GET","/greeting",false);
+			//xhr.send();
+			console.log("update without loading a new page");
+			document.getElementById("target").innerHTML="hello!";
 		}
 	</script>
 </head>
