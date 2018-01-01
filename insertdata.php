@@ -1,7 +1,7 @@
 
 <?php
 
-if( isset( $_POST['user_name'] ) )
+/*if( isset( $_POST['user_name'] ) )
 {
 
 $name = $_POST['user_name'];
@@ -20,4 +20,4 @@ $pass = ' ';
 //mysql_query($insertdata);
 
 }
-?>
+?>*/
