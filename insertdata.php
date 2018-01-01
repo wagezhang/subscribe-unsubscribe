@@ -19,5 +19,5 @@ $pass = ' ';
 //$insertdata=" INSERT INTO user_info VALUES( '$name','$age','$course' ) ";
 //mysql_query($insertdata);
 
-}
-?>*/
+}*/
+?>
