@@ -1,61 +1,43 @@
-<!doctype html>
 <html>
 <head>
-	<meta charset="utf8"/>
-	<link rel="stylesheet" href="style.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+
+function submitdata()
+{
+ var name=document.getElementById( "name_of_user" );
+ var age=document.getElementById( "age_of_user" );
+ var course=document.getElementById( "course_of_user" );
+
+ $.ajax({
+  type: 'post',
+  url: 'insertdata.php',
+  data: {
+   user_name:name,
+   user_age:age,
+   user_course:course
+  },
+  success: function (response) {
+   $('#success__para').html("You data will be saved");
+  }
+ });
 	
+ return false;
+}
+
+</script>
+
 </head>
 <body>
-	<h1>Place your order here...</h1>
+		
+<form method="POST" onsubmit="return submitdata();">
+ <input type="text" name="username" id="name_of_user">
+ <input type="text" name="userage" id="age_of_user">
+ <input type="text" name="usercourse" id="course_of_user">
+ <input type="submit" name="submit_form" value="Submit">
+</form>
 
-	
-	<form  action="/placeOrder" onsubmit="return validateForm()" method="get">
-			<label for="nameField">Name:</label>
-			<input type="text" id="nameField" name="userName" placeholder="Your Name" required/>
-		
-			<select name="order" id="orderSelect">
-				<option value="pizza">Pizza</option>
-				<option value="wings">Wings</option>
-				<option value="subs">Subs</option>
-			</select>
-			<br/>
-		
-			
-			
-		<input type="submit" value="Submit Order" />
-	</form>
-	
-	<script>
-	
-		function validateForm(event){
-			
-			
-			//remove all previous warnings
-			var warnings = document.querySelectorAll(".warning");
-			for(var i=0;i<warnings.length;i++){
-				warnings[i].remove();
-			}
-			
-			var text1 = document.getElementById("nameField");
-			var text2 = document.getElementById("deliveryNotes");
-						
-			var warningSpan = document.createElement("span");
-			warningSpan.className="warning";
-			warningSpan.innerHTML="Invalid text, you may not use <.";
-			
-			
-			
-			if(text1.value.indexOf("<")!==-1){
-				text1.parentElement.insertBefore(warningSpan,text1.nextElementSibling);
-				return false;
-			}
-			if(text2.value.indexOf("<")!==-1){
-				text2.parentElement.insertBefore(warningSpan,text2.nextElementSibling);
-				return false;
-			}
-			return true;
-		}
-		
-	</script>
+<p id="success_para" ></p>
+
 </body>
 </html>
