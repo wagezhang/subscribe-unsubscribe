@@ -10,7 +10,6 @@
 
 	
 	<form  action="/placeOrder" onsubmit="return validateForm()" method="get">
-		<fieldset>
 			<legend>Order Form:</legend>
 			<label for="nameField">Name:</label>
 			<input type="text" id="nameField" name="userName" placeholder="Your Name" required/>
@@ -27,7 +26,6 @@
 			<label for="deliveryNotes">Delivery Notes:</label><br/>
 			<textarea name="notes" id="deliveryNotes" placeholder="Notes for the driver" style="width:300px"></textarea>
 			
-		</fieldset><br/>
 		<input type="submit" value="Submit Order" />
 	</form>
 	
